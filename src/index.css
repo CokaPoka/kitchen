@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: Amicale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: bolder;
+}
+
+p{
+  margin: 15px;
+}
+
+a:hover {
+  color: black;
+}
+
+@font-face {
+  font-family: Amicale;
+  src: url('../src/font/Amicale-Regular.otf');
+}
+
+

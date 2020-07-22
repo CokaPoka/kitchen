@@ -1,0 +1,53 @@
+.wrapper-question-sheet {
+    padding: 80px 15%;
+}
+
+.question-sheet-title {
+    width: 90%;
+    padding: 20px;
+    background-color: #f0f1f1;
+    color: black;
+    margin: 20px auto;  
+    border-radius: 20px; 
+}
+
+.question-sheet-part1 {
+    width: 90%;
+    padding: 20px;
+    background-color: #f0f1f1;
+    color: black;
+    margin: 20px auto;  
+    border-radius: 20px; 
+}
+
+h2 {
+    padding-bottom: 15px;
+
+}
+
+.form-checkbox-container {
+    padding: 10px;
+}
+
+#stil {
+    margin: 5px;
+}
+
+#materijal {
+    margin: 5px;
+}
+
+input[type=text], input[type=email]{
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background-color: white;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label {
+    padding: 5px;
+}
