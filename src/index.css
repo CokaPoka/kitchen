@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: Amicale;
+  font-family: 'Libre Franklin';
+  letter-spacing: 0.1rem;
 }
 
 * {

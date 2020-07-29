@@ -7,7 +7,9 @@
 
 .img-gallery:hover {
     opacity: 0.6;
-    cursor: crosshair;
+    cursor: pointer;
+    width: 355px;
+    height: auto;
 }
 
 .photo-item {

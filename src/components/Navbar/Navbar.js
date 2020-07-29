@@ -39,7 +39,7 @@ const Navbar =(props)=> {
                     </ul>
                 </li>
                 <li><a href="/">Cene</a></li>
-                <li><a href="/">Kontakt</a></li>
+                <li><a href="/contact">Kontakt</a></li>
             </ul>
                 <div className="drawer-toggle-button" onClick={props.buttonMenuClickHandler}>
                     <div id="nav-icon3" className={navIcon3}>

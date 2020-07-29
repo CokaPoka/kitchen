@@ -1,20 +1,21 @@
 #gallery-container {
     text-align: center;
     height: auto;
-    padding: 80px;
+    padding-top: 80px;
+    padding-bottom: 15px;
+    background-color: #e3f3eb;
 
 }
 
 .photo-list {
-    background-color: #ffffff;;
+    background-color: #e3f3eb;
     padding: 3px;
-    height: 630px;
-    overflow: auto;
+    /* overflow: auto;
     --scrollbarBG: #cccfcfe8;
-    --thumbBG: #000000;
+    --thumbBG: #000000; */
 }
 
-.photo-list::-webkit-scrollbar {
+/* .photo-list::-webkit-scrollbar {
   width: 14px;
 }
 .photo-list {
@@ -28,13 +29,12 @@
   background-color: var(--thumbBG) ;
   border-radius: 6px;
   border: 3px solid var(--scrollbarBG);
-}
+} */
 
 img {
   width: 60%;
   height: auto;
 }
-
 
 .albums {
   width: 900px;

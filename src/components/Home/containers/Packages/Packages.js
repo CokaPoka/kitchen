@@ -58,13 +58,17 @@ const Packages = () => {
                             </p>
                     </div>
                     <div className="package-item-bottom">
-                        <select onChange={(e) => { handleCena(e) }}>
-                            <option value='5'>5</option>
-                            <option value='10'>10</option>
-                            <option value='11'>vece od 10</option>
-                        </select>
+                        <div className="kitchen-size-container">
+                            <p className="kitchen-size-title">Veličina kuhinje:</p>
+                            <select className="kitchen-size-select" onChange={(e) => { handleCena(e) }}>
+                                <option value='5'>5</option>
+                                <option value='10'>10</option>
+                                <option value='11'>&#x3e; 10</option>
+                            </select>
+                            <p className="kitchen-size-title-squared">m</p>
+                        </div>
                         <h3 style={{ color: "#fff" }}>cena</h3>
-                        <h2 style={{ color: "#fff" }}>{cena} €</h2>
+                        <h2 style={{ color: "#fff", paddingBottom:"0px" }}>{cena} €</h2>
                         <a href="/questionsheet">
                             <button className="button type1" >poruči</button>
                         </a>

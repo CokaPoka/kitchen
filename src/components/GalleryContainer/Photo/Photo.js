@@ -6,7 +6,7 @@ const Photo = ({ photo, openLightbox }) => {
 
     return (
         <div className='photo-item'>
-            <img src={photo.src} alt='item-img' onClick={(e) => openLightbox(e, photo)} className="img-gallery"></img>
+            <img src={`http://localhost:4000/${photo.image}`} alt='item-img' onClick={(e) => openLightbox(e, photo)} className="img-gallery"></img>
         </div>
     )
 }

@@ -1,0 +1,97 @@
+.contact-wrapper {
+    padding-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-header {
+    width: 100%;
+}
+
+.contact-header-img {
+    width: 100%;
+    height: 400px;
+    background-image: url('../../img/contact-img.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-content {
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 40%;
+    padding: 40px;
+    text-align: center;
+}
+
+.contact-container {
+    width: 1200px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-container-left {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120px;
+    justify-content: space-between;
+}
+
+.contact-container-right {
+    width: 700;
+    padding: 0 60px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: center;
+}
+
+textarea {
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: white;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 630px;
+    height: 150px;
+    font-size: 16px;
+    font-family: 'Libre Franklin';
+    letter-spacing: 0.1rem;
+}
+
+.button-send {
+    font-size: 16px;
+    margin: 8px 0;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+    min-width: 170px;
+    padding: 16px 20px;
+    background-color: #a3ccb6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.button-send:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+
+

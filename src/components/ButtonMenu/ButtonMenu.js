@@ -16,7 +16,7 @@ const ButtonMenu = (props) => {
                     </div>
                 </div><hr></hr>
                 <div><a className="menu2-title" href="/" onClick={props.buttonMenuClose}>Cena</a></div><hr></hr>
-                <div><a className="menu2-title" href="/" onClick={props.buttonMenuClose}>Kontakt</a></div>
+                <div><a className="menu2-title" href="/contact" onClick={props.buttonMenuClose}>Kontakt</a></div>
             </div>
         </div>
     )

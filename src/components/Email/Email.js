@@ -39,10 +39,7 @@ class Email extends Component {
         message: "something"
     };
 
-    title = this.state.title
-    message = this.state.message
-    email = this.state.email
-    
+     
     // On file select (from the pop up) 
     onFileChange = event => {
 
@@ -61,16 +58,14 @@ class Email extends Component {
             "myFile",
             this.state.selectedFile,
         );
+        console.log(...formData);
 
         // Details of the uploaded file 
         console.log(this.state.selectedFile);
 
         // Request made to the backend api 
         // Send formData object 
-        axios.post("http://localhost:4444/api/v1/contact", {
-            formData, 'title': this.title,
-            'message': this.message, 'email': this.email
-            });
+        axios.post("http://localhost:4444/api/v1/contact", formData);
     };
 
     // File content to be displayed after 
@@ -112,7 +107,7 @@ class Email extends Component {
                     File Upload using React!
             </h3>
                 <div>
-                    <input type="file" onChange={this.onFileChange} />
+                    <input type="file" name='myFile' onChange={this.onFileChange} />
                     <button onClick={this.onFileUpload}>
                         Upload!
                 </button>
