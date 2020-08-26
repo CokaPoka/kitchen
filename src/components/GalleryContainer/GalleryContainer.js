@@ -4,7 +4,7 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 import Photo from './Photo/Photo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import getPhotos from '../../service/Service';
+import {getPhotos} from '../../service/Service';
 
 const GalleryContainer = () => {
 

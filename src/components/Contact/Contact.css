@@ -13,7 +13,7 @@
 
 .contact-header-img {
     width: 100%;
-    height: 400px;
+    height: 40vh;
     background-image: url('../../img/contact-img.jpg');
     background-size: cover;
     display: flex;
@@ -47,7 +47,7 @@
 }
 
 .contact-container-right {
-    width: 700;
+    width: 700px;
     padding: 0 60px;
 }
 
@@ -56,6 +56,16 @@
     flex-direction: column;
     height: 400px;
     justify-content: center;
+}
+
+#contact-input-email {
+    width: 630px;
+}
+
+.contact-input-top {
+    width: 630px;
+    display: flex;
+    justify-content: space-between;
 }
 
 textarea {
@@ -92,6 +102,98 @@ textarea {
     background-color: black;
     cursor: pointer;
 }
+
+@media (max-width:1200px) {
+    .contact-container {
+        flex-direction: column-reverse;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    .contact-form {
+        align-items: center;
+    }
+
+    .contact-container-right {
+        width: 100%;
+        padding: 0;
+    }
+    .contact-container-left {
+        width: 100%;
+    }
+
+    .contact-button {
+        text-align: center;
+    }
+    .contact-header-img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width:660px) {
+    .contact-input-top {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #contact-input-email {
+        width: 300px;
+    }
+
+    #contact-name {
+        width: 300px;
+    }
+
+    #contact-number {
+        width: 300px;
+    }
+
+    textarea {
+        width: 300px;
+    }
+
+    .contact-container {
+        height: auto;
+        padding-top: 40px;
+        text-align: center;
+    }
+
+    .contact-container-right {
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    .contact-container-left {
+        width: 100%;
+    }
+
+    .contact-content h1 {
+        font-size: 20px;
+    }
+
+     .contact-header-img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .contact-content {
+        width: 60%;
+    }
+
+    
+}
+/* 
+@media (max-width:415px) {
+      .contact-name {
+        width: 300px;
+    }
+
+    .contact-number {
+        width: 300px;
+    }
+} */
 
 
 

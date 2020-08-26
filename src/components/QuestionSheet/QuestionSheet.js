@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import './QuestionSheet.css';
+import axios from 'axios';
+import AOS from 'aos';
 
 const QuestionSheet = () => {
+
+    AOS.init()
+
+    const [file, setFile] = useState({});
+    const [file2, setFile2] = useState({});
+    const [file3, setFile3] = useState({});
+    const [file4, setFile4] = useState({});
+    const [message,setMessage] = useState('');
+
+    const onClickHandler = () => {
+        const formData = new FormData()
+        formData.append('myimage1', file);
+        formData.append('myimage2', file2);
+        formData.append('myimage3', file3);
+        formData.append('myimage4', file4);
+
+        console.log(...formData);
+
+        axios.post("http://localhost:4000/questionsheet", formData).then(res => {
+            console.log(res.statusText)
+        })
+    }
 
     function sendEmail(e) {
         e.preventDefault();
@@ -13,17 +37,24 @@ const QuestionSheet = () => {
             }, (error) => {
                 console.log(error.text);
             });
-            e.target.reset();
+        e.target.reset();
+        setMessage("Hvala! Usprešno ste popunili upitnik. Bićete kontaktirani u najkraćem mogućem roku.")
     }
 
-
     return (
-        <div className="wrapper-question-sheet">
-            <form className="questionsheet-form" onSubmit={sendEmail}>
-                <div className="question-sheet-title">
-                    <h1>POPUNITE NEOPHODNE PODATKE ZA CRTANJE KUHINJE:</h1>
+        <div className="wrapper-question-sheet" data-aos="fade-in" data-aos-duration="3000" data-aos-delay="400">
+            <div className="question-sheet-header">
+                <div className="question-sheet-header-img">
+                    <div className="question-sheet-content">
+                        <h1 id="question-sheet-header-title">NARUČITE PROJEKAT KUHINJE / TRPEZARIJE / DNEVNOG BORAVKA</h1>
+                    </div>
                 </div>
-                <div className="question-sheet-part1">
+            </div>
+            <form className="questionsheet-form" onSubmit={(e) => { sendEmail(e); onClickHandler(e) }}>
+                <div className="question-sheet-title">
+                    <h1>POPUNITE NEOPHODNE PODATKE ZA CRTANJE KUHINJE / TRPEZARIJE / DNEVNOG BORAVKA:</h1>
+                </div>
+                <div className="question-container">
                     <h1>IZGLED KUHINJE</h1><br></br>
                     <h2>Izaberite stil Vaše kuhinje.</h2>
                     <h3>Ovo su tri osnovna stila kuhinje, ukoliko imate sliku kuhinje čiji Vam se stil dopada dodajte je.</h3>
@@ -45,7 +76,8 @@ const QuestionSheet = () => {
                             <label htmlFor="idk">Još se nisam odlučio/la</label>
                         </div><br></br>
                         <label htmlFor="img">Dodajte fotografiju:</label>
-                        <input type="file" id="myFile" name="img" accept="image/png, image/jpeg" ></input>
+                        <input type="file" id="myFile" name="img" accept="image/png, image/jpeg" required onChange={(event) => setFile(event.target.files[0])} ></input>
+
                     </div><br></br>
                     <h2>Kakvu kuhinju biste voleli? </h2>
                     <h3>Izaberite materijal od čega biste voleli da Vam bude lice (front) kuhinje:</h3>
@@ -72,7 +104,7 @@ const QuestionSheet = () => {
                         </div>
                     </div>
                 </div>
-                <div className="question-sheet-part1">
+                <div className="question-container">
                     <h1>TEHNIKA</h1><br></br>
                     <h2>Kakve uređaje planirate?</h2>
                     <h3>Opišite nam kakve uređaje (tehniku) planirate u Vašoj kuhinji, obratite pažnju da li želite ugradne ili neugradne uređaje.</h3>
@@ -128,45 +160,153 @@ const QuestionSheet = () => {
                     </div>
                 </div>
 
-                <div className="question-sheet-part1">
-                    <h1>Veličina prostorije</h1><br></br>
+                <div className="question-container">
+                    <h1>VELIČINA PROSTORIJE</h1><br></br>
                     <div>
-                        <label>ZID A</label>
-                        <input type="text" name="zid-a" required />
-                        <h3>Upišite dužinu zida A</h3>
+                        <h3>Kuhinje:</h3>
+                        <div>
+                            <label>ZID A</label>
+                            <input type="text" name="zid-a" required placeholder="Upišite dužinu zida A kuhinje" />
+                        </div>
+                        <div>
+                            <label>ZID B</label>
+                            <input type="text" name="zid-b" required placeholder="Upišite dužinu zida B kuhinje" />
+                        </div>
+                        <div>
+                            <label>ZID C</label>
+                            <input type="text" name="zid-c" required placeholder="Upišite dužinu zida C kuhinje" />
+                        </div>
+                        <div>
+                            <label>Visina prostorije </label>
+                            <input type="text" name="visina" required placeholder="Upišite visinu prostorije" />
+                        </div>
                     </div>
                     <div>
-                        <label>ZID B</label>
-                        <input type="text" name="zid-b" required />
-                        <h3>Upišite dužinu zida B</h3>
+                        <h3>Trpezarije:</h3>
+                        <div>
+                            <label>ZID A</label>
+                            <input type="text" name="zid-a" placeholder="Upišite dužinu zida A" />
+                        </div>
+                        <div>
+                            <label>ZID B</label>
+                            <input type="text" name="zid-b" placeholder="Upišite dužinu zida B" />
+                        </div>
+                        <div>
+                            <label>ZID C</label>
+                            <input type="text" name="zid-c" placeholder="Upišite dužinu zida C" />
+                        </div>
+                        <div>
+                            <label>ZID D</label>
+                            <input type="text" name="zid-d" placeholder="Upišite dužinu zida D" />
+                        </div>
+                        <div>
+                            <label>Visina prostorije </label>
+                            <input type="text" name="visina" placeholder="Upišite visinu prostorije" />
+                        </div>
                     </div>
                     <div>
-                        <label>ZID C</label>
-                        <input type="text" name="zid-c" required />
-                        <h3>Upišite dužinu zida C</h3>
-                    </div>
-                    <div>
-                        <label>Visina prostorije </label>
-                        <input type="text" name="visina" required />
+                        <h3>Dnevnog boravka:</h3>
+                        <div>
+                            <label>ZID A</label>
+                            <input type="text" name="zid-a" placeholder="Upišite dužinu zida A" />
+                        </div>
+                        <div>
+                            <label>ZID B</label>
+                            <input type="text" name="zid-b" placeholder="Upišite dužinu zida B" />
+                        </div>
+                        <div>
+                            <label>ZID C</label>
+                            <input type="text" name="zid-c" placeholder="Upišite dužinu zida C" />
+                        </div>
+                        <div>
+                            <label>ZID D</label>
+                            <input type="text" name="zid-d" placeholder="Upišite dužinu zida D" />
+                        </div>
+                        <div>
+                            <label>Visina prostorije </label>
+                            <input type="text" name="visina" placeholder="Upišite visinu prostorije" />
+                        </div>
                     </div>
                 </div>
-
-                <div className="question-sheet-part1">
-                    <div>
-                        <label>Ime</label>
-                        <input type="text" name="user_name" required />
+                <div className="question-container">
+                    <h1>PROZOR I POLOŽAJ (UKOLIKO GA IMA)</h1><br></br>
+                    <h3>Da li u prostoriji ima prozor?</h3>
+                    <div className="form-checkbox-container">
+                        <div>
+                            <input type="checkbox" id="prozor" name="da" value="Da"></input>
+                            <label htmlFor="da">Da</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="prozor" name="ne" value="Ne"></input>
+                            <label htmlFor="ne">Ne</label>
+                        </div>
                     </div>
-                    <div>
-                        <label>Prezime</label>
-                        <input type="text" name="user_surname" required />
+                    <h3>Na kom zidu se nalazi prozor?</h3>
+                    <h3>Označite na kojem zidu se nalazi prozor ukoliko ga ima.</h3>
+                    <div className="form-checkbox-container">
+                        <div>
+                            <input type="checkbox" id="prozor" name="ZID A" value="ZID A"></input>
+                            <label htmlFor="ZID A">ZID A</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="prozor" name="ZID B" value="ZID B"></input>
+                            <label htmlFor="ZID B">ZID B</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="prozor" name="ZID C" value="ZID C"></input>
+                            <label htmlFor="ZID C">ZID C</label>
+                        </div>
                     </div>
-                    <div>
-                        <label>Email</label>
-                        <input type="email" name="user_email" required />
-                    </div>
+                    <h3>Dimenzije prozora.</h3>
+                    <h3>Upišite dimenzije prozora ŠxV (širina-visina), koliko je udaljen od susednog zida i kog (npr. 100x80, 85cm, od zida B)</h3>
+                    <textarea className="dimenzije-prozora-textarea" name="dimenzije prozora" required />
+                    <h3>Priložite plan kao dodatak.</h3>
+                    <h3>Plan 1</h3>
+                    <input type="file" id="myFile" name="img" accept="image/png, image/jpeg" required onChange={(event) => setFile2(event.target.files[0])} />
+                    <h3>Plan 2</h3>
+                    <input type="file" id="myFile" name="img" accept="image/png, image/jpeg" required onChange={(event) => setFile3(event.target.files[0])} />
+                    <h3>Plan 3</h3>
+                    <input type="file" id="myFile" name="img" accept="image/png, image/jpeg" required onChange={(event) => setFile4(event.target.files[0])} />
+                    <h4>Dodajte plan, skicu ili projekat gde se mogu videti dimenzije prostora gde će se nalaziti kuhinja. (png | jpg )</h4>
+                    <h3>Opis</h3>
+                    <h4>Udaljenost odvoda, radna ploča, prozor...(ukoliko nije ucrtano u priloženim projektu)</h4>
+                    <textarea className="opis-prozora-textarea" name="dimenzije prozora" required />
                 </div>
 
-                <input type="submit" value="Send" />
+                <div className="question-container">
+                    <h1>HAJDE DA ZAPOČNEMO VAŠ PROJEKAT</h1><br></br>
+                    <div className="form-checkbox-container">
+                        <div>
+                            <input type="text" name="user_name" required placeholder="Ime" />
+                        </div>
+                        <div>
+                            <input type="text" name="user_surname" required placeholder="Prezime" />
+                        </div>
+                        <div>
+                            <input type="text" name="user_address" required placeholder="Adresa" />
+                            <p style={{ margin: "10px 0" }}>Nije potrebna tačna adresa, već grad u kojem se nalazi prostor koji želite da uređujete.</p>
+                        </div>
+                        <div>
+                            <input type="email" name="user_email" required placeholder="Email" />
+                        </div>
+                        <div style={{ display: "flex", padding: "10px 0" }}>
+                            <p style={{ margin: "10px 0", paddingRight: "10px" }}>Paket usluga koji ste izabrali:</p>
+                            <select >
+                                <option value='K'>K</option>
+                                <option value='K+T'>K+T</option>
+                                <option value='OPEN SPACE'>OPEN SPACE</option>
+                            </select>
+                        </div>
+                        <div>
+                            <h2 style={{ paddingBottom: "5px", paddingTop: "10px" }}>Ukratko opišite šta biste želili da dobijete od ovog projekta</h2>
+                            <textarea className="opis-projekat" name="opis-projekat" />
+                            <p style={{ margin: "10px 0" }}>Napišite sve ono što smatrate bitnim informacijama vezanim za prostor koji želite da uredimo</p>
+                        </div>
+
+                    </div>
+                    <input type="submit" className="button-send" value="Pošalji" />
+                    <p style={{ margin: "2px", color: "red"}}>{message}</p>
+                </div>
             </form>
         </div>
     );

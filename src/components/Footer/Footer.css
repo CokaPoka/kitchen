@@ -1,9 +1,82 @@
 .footer-wrapper {
     width: 100%;
-    height: 300px;
+    padding: 50px 0;
     background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.footer-gallery-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-gallery-title{
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+    width: 500px;
+}
+
+.footer-gallery-title:hover {
+    color: rgb(206, 204, 204);
+}
+
+.footer-carousel {
+    width: 500px;
+}
+
+.footer-newsletter-container {
+    width: 50%;
+    text-align: center;
+}
+
+.css-1ycyyax {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    text-align: center;
+}
+
+@media(max-width:800px){
+    .footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+    }
+    .footer-gallery-container {
+        padding-bottom: 20px;
+}
+
+}
+
+@media(max-width:690px){
+    .footer-newsletter-container {
+        width: 100%; 
+}
+    .footer-gallery-container {
+        width: 100%;
+}
+}
+
+@media(max-width:600px){
+       .footer-gallery-container {
+        width: 100%;
+}
+    .footer-carousel {
+    width: 100%;
+} 
+    .footer-gallery-title{
+
+    width: 100%;
+}
+
 }

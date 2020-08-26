@@ -8,6 +8,7 @@ import Navbar from './components/Navbar/Navbar'
 import GalleryContainer from './components/GalleryContainer/GalleryContainer';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import Blog from './components/Blog/Blog';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
       {backdrop}
      <Switch>
         <Route path='/contact'><Contact /></Route>
+        <Route path='/blog'><Blog /></Route>
         <Route path='/questionsheet'><QuestionSheet /></Route>
         <Route path='/gallery'><GalleryContainer /></Route>
         <Route path='/'><Home /></Route>

@@ -26,7 +26,7 @@ const Contact = () => {
                     console.log(error.text);
                 });
             e.target.reset();
-            setAlert('');
+            setAlert('Hvala! Usprešno ste popunili kontakt formu. Bićete kontaktirani u najkraćem mogućem roku.');
             setName('');
             setMessage('');
             setNumber('');
@@ -54,17 +54,17 @@ const Contact = () => {
                 <div className="contact-container-right">
                     <form className="contact-form" onSubmit={sendEmail}>
                         <p style={{margin:"2px", color:"red"}}>{alert}</p>
-                        <div style={{ width: "630px", display: "flex", justifyContent: "space-between" }}>
-                            <input type="text" name="user_name" placeholder="Ime" onInput={(e) => setName(e.target.value)} />
-                            <input type="text" name="contact_number" placeholder="Kontakt telefon" onInput={(e) => setNumber(e.target.value)} />
+                        <div className="contact-input-top">
+                            <input type="text" name="user_name" id="contact-name" placeholder="Ime" onInput={(e) => setName(e.target.value)} />
+                            <input type="text" name="contact_number" id="contact-number" placeholder="Kontakt telefon" onInput={(e) => setNumber(e.target.value)} />
                         </div>
                         <div>
-                            <input type="email" name="user_email" placeholder="Email" style={{ width: "630px" }} onInput={(e) => setEmail(e.target.value)} />
+                            <input id="contact-input-email" type="email" name="user_email" placeholder="Email" onInput={(e) => setEmail(e.target.value)} />
                         </div>
                         <div>
                             <textarea name="message" placeholder="Poruka" onInput={(e) => setMessage(e.target.value)} />
                         </div>
-                        <div>
+                        <div className="contact-button">
                             <input type="submit" value="Pošalji" className="button-send" />
                         </div>
                     </form>

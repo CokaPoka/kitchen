@@ -254,6 +254,11 @@ ul li a:hover::after {
   transform-origin: left;
 }
 
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
 
 
 

@@ -10,26 +10,8 @@
 .photo-list {
     background-color: #e3f3eb;
     padding: 3px;
-    /* overflow: auto;
-    --scrollbarBG: #cccfcfe8;
-    --thumbBG: #000000; */
+    min-height: 80vh;
 }
-
-/* .photo-list::-webkit-scrollbar {
-  width: 14px;
-}
-.photo-list {
-  scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-}
-.photo-list::-webkit-scrollbar-track {
-  background: var(--scrollbarBG);
-}
-.photo-list::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG) ;
-  border-radius: 6px;
-  border: 3px solid var(--scrollbarBG);
-} */
 
 img {
   width: 60%;

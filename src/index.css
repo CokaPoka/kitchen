@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: 'Libre Franklin';
   letter-spacing: 0.1rem;
+  width: 100%;
 }
 
 * {
@@ -11,6 +12,14 @@ body {
 
 h1 {
   font-weight: bolder;
+}
+
+h3 {
+  padding: 9px;
+}
+
+h4{
+  padding-bottom: 3px;
 }
 
 p{

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
-import $ from 'jquery'
+import $ from 'jquery';
+import logo from '../../img/logoNK.png'
 
 const Navbar =(props)=> {
 
@@ -27,18 +28,19 @@ const Navbar =(props)=> {
         <>
         <nav className="main-navigation">
             <div className="logo">
-                <h3>LOGO</h3>
+                <img className="logo-img" src={logo} alt="logo-img" />
             </div>
             <ul className="menu">
                 <li><a href="/">Početna</a></li>
                 <li><a href="/gallery">Galerija</a></li>
-                <li className="menu-item-has-children"><a href="/">Blog</a>
+                <li><a href="/questionsheet">Počnimo saradnju</a></li>
+                {/* <li className="menu-item-has-children"><a href="/blog">Blog</a>
                     <ul className="sub-menu">
                         <li><a href="/">Nesto 1</a></li>
                         <li><a href="/">Nesto 2</a></li>
                     </ul>
                 </li>
-                <li><a href="/">Cene</a></li>
+                <li><a href="/">Cene</a></li> */}
                 <li><a href="/contact">Kontakt</a></li>
             </ul>
                 <div className="drawer-toggle-button" onClick={props.buttonMenuClickHandler}>
