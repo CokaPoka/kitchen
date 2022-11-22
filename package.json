@@ -23,7 +23,7 @@
     "react-images": "^1.1.7",
     "react-lightbox-component": "^1.2.1",
     "react-photo-gallery": "^8.0.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-visibility-sensor": "^5.1.1"
   },
   "scripts": {
